@@ -35,11 +35,33 @@ We welcome contributions from all users! If you have a strategy, a feature from 
 
 To use the strategies or features in this repository, you'll need to have StockSharp installed and configured on your system. Each strategy or feature may have specific requirements or dependencies, so be sure to check the included README.md or documentation files for each contribution.
 
+### Option 1: StockSharp Designer (GUI)
+
 The easiest way to run these strategies is through the [Designer](https://stocksharp.com/store/strategy-designer/) application:
 
 1. Download Designer from the [official site](https://stocksharp.com/products/download/).
 2. Install the program on your machine.
 3. Open the [Strategy Gallery](https://doc.stocksharp.com/topics/designer/strategy_gallery.html) inside Designer and select the strategy you want to run.
+
+### Option 2: Backtester (Command-Line)
+
+For developers who prefer a command-line interface or need to integrate backtesting into automated workflows, this repository includes the **Backtester** tool:
+
+```bash
+# Build the Backtester
+dotnet build Backtester/Backtester.csproj
+
+# Run a backtest on any strategy
+dotnet run --project Backtester/Backtester.csproj -- API/0001_Simple_SMA/CS/SimpleSmaStrategy.cs
+```
+
+**Key Features:**
+- **Dynamic Compilation**: Compiles strategy C# files at runtime
+- **Historical Simulation**: Tests strategies against historical market data
+- **Performance Metrics**: Reports P&L and detailed execution logs
+- **CI/CD Ready**: Perfect for automated testing pipelines
+
+For complete documentation, see [Backtester/README.md](Backtester/README.md).
 
 ## Disclaimer
 
